@@ -1,21 +1,11 @@
 %h1 Listing sites
 
-%table
-  %thead
-    %tr
-      %th Url
-      %th Description
-      %th Source
-      %th
+= simple_form_for @site, url: sites_path, method: :get, remote: true, html: { class: 'form-inline' } do |f|
+  .row
+    .col-md-12
+      = f.input :search, input_html: { class: 'form-control' }, wrapper_html: { class: 'pull-right'}
 
-  %tbody
-    - @sites.each do |site|
-      %tr
-        %td= site.url
-        %td= site.description
-        %td= site.source
-        %td= link_to 'Edit', edit_site_path(site), remote: true
-
-= paginate @sites
+#site-listing
+  = render 'results'
 
 #my-modal.modal.fade{:role => "dialog", :tabindex => "-1"}

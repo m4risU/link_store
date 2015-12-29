@@ -30,6 +30,7 @@ gem 'sinatra', require: nil
 gem 'bootstrap-generators', '~> 3.3.4'
 gem 'kaminari'
 gem 'screencap' # for site screenshot
+gem 'simple_form'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
