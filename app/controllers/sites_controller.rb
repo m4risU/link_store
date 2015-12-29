@@ -3,7 +3,7 @@ class SitesController < ApplicationController
 
   def index
     @site = Site.new(site_filter)
-    @sites = Site.search(search_params).page(params[:page]).per(25)
+    @sites = Site.search(search_params).order(sort_column + " " + sort_direction).page(params[:page]).per(25)
   end
 
   def edit
@@ -18,6 +18,8 @@ class SitesController < ApplicationController
       end
     end
   end
+
+  helper_method :sort_column, :sort_direction
 
   private
 
@@ -39,5 +41,13 @@ class SitesController < ApplicationController
 
   def site_params
     params.require(:site).permit(:description, :source)
+  end
+
+  def sort_column
+    Site.sortable_column_names.include?(params[:sort]) ? params[:sort] : "url"
+  end
+
+  def sort_direction
+    %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
   end
 end

@@ -1,9 +1,12 @@
-%table
+%table.table-bordered.table-hover
   %thead
     %tr
-      %th Url
-      %th Description
-      %th Source
+      %th
+        = sortable 'url', 'URL', true
+      %th
+        = sortable 'description', 'DESCRIPTION', true
+      %th
+        = sortable 'source', 'SOURCE', true
       %th
 
   %tbody

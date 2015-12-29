@@ -1,7 +1,7 @@
 namespace :scraper do
   desc "Fetch top 100 sites from Alexa"
   task alexa: :environment do
-    Scraper::Alexa.run(100)
+    Scraper::Alexa.run
   end
 end
 

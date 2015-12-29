@@ -15,6 +15,12 @@ class Site < ActiveRecord::Base
     )
   }
 
+  class << self
+    def sortable_column_names
+      ['url', 'description', 'source']
+    end
+  end
+
   def fetch_stats
     doc = Nokogiri::HTML(open(source))
     doc.css('#contact-panel-content > div:nth-child(3) > span.span8 > p.color-s3').each do |desc|
