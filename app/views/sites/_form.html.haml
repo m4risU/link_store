@@ -1,0 +1,23 @@
+= form_for @site, remote: true do |f|
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
+          %span{"aria-hidden" => "true"} ×
+        %h4.modal-title Edit #{@site.url}
+      .modal-body
+        - if @site.errors.any?
+          #error_explanation
+            %h2= "#{pluralize(@site.errors.count, "error")} prohibited this site from being saved:"
+            %ul
+              - @site.errors.full_messages.each do |msg|
+                %li= msg
+        .field
+          = f.label :description
+          = f.text_area :description
+        .field
+          = f.label :source
+          = f.text_area :source
+      .modal-footer
+        %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} Close
+        = f.submit 'Save changes', input_html: { class: 'btn btn-primary', type: "button"}

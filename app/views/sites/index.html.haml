@@ -1,0 +1,20 @@
+%h1 Listing sites
+
+%table
+  %thead
+    %tr
+      %th Url
+      %th Description
+      %th Source
+      %th
+
+  %tbody
+    - @sites.each do |site|
+      %tr
+        %td= site.url
+        %td= site.description
+        %td= site.source
+        %td= link_to 'Edit', edit_site_path(site), remote: true
+
+
+#my-modal.modal.fade{:role => "dialog", :tabindex => "-1"}
