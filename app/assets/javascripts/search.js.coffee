@@ -3,9 +3,15 @@ delayed_submit = (initial_value, input_handle, input_form) ->
   input_value = $(input_handle).val()
   $(input_form).submit() if input_value == initial_value
 
-$ ->
+filter_func = ->
   $('#site_search').keyup (e) ->
     input_value = $(@).val()
     delay 700, ->
       delayed_submit(input_value, '#site_search', '#new_site')
 
+
+$(document).on "page:load": ->
+  filter_func()
+
+$ ->
+  filter_func()
