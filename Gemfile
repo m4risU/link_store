@@ -29,6 +29,7 @@ gem 'sidekiq'
 gem 'sinatra', require: nil
 gem 'bootstrap-generators', '~> 3.3.4'
 gem 'kaminari'
+gem 'screencap' # for site screenshot
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -39,6 +40,7 @@ group :development, :test do
   gem 'guard'
   gem 'guard-rails'
   gem 'guard-rspec'
+  gem 'foreman'
 end
 
 group :development do
