@@ -1,28 +1,20 @@
-== README
+== SUMMARY
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Things done and not finished:
 
-Things you may want to cover:
+* Right now there is some nokogiri parsing, but I have noticed gems that can be used to fetch details from alexa
 
-* Ruby version
+* It is worth to think of some smart delays between calls to websites that are going to be parsed, it is easy to get ban for flooding requests. Sidekiq is getting better to run jobs quicker and quicker.
 
-* System dependencies
+* I did not pay too much attention on what data I'm fetching from alexa, there is proper place for that as I get current description from alexa for each url.
 
-* Configuration
+* data is fetched with ```rake scraper:alexa```
 
-* Database creation
+* Database is sqlite for easy setup, I would prefer postgres
 
-* Database initialization
+* guard has removed rails runner as it conflicts with foreman, while I prefer guard and having all processes in separate windows, foreman is good when more stuff needs to be fired and it serves as good documentation on what needs to be running to have application complete
 
-* How to run the test suite
+* Next steps would be to put some specs for crucial methods
 
-* Services (job queues, cache servers, search engines, etc.)
+* image fetching has same place in delayed worker, the gem in gemfile is working pretty wel for that purpose
 
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
