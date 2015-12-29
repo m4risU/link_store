@@ -2,21 +2,23 @@
 
 Things done and not finished:
 
-* Right now there is some nokogiri parsing, but I have noticed gems that can be used to fetch details from alexa
+* Right now there is some basic nokogiri parsing, but I have noticed gems that can be used to fetch details from alexa api(?)
 
 * It is worth to think of some smart delays between calls to websites that are going to be parsed, it is easy to get ban for flooding requests. Sidekiq is getting better to run jobs quicker and quicker.
 
-* I did not pay too much attention on what data I'm fetching from alexa, there is proper place for that as I get current description from alexa for each url.
+* I did not pay too much attention on what data I'm fetching from alexa, but I have left a place to get more data.
 
 * data is fetched with ```rake scraper:alexa```
 
-* Database is sqlite for easy setup, I would prefer postgres
+* Database is sqlite for easy setup, I would prefer postgres, seems it would resonate with redis better.
 
 * guard has removed rails runner as it conflicts with foreman, while I prefer guard and having all processes in separate windows, foreman is good when more stuff needs to be fired and it serves as good documentation on what needs to be running to have application complete
 
 * Next steps would be to put some specs for crucial methods
 
 * image fetching has same place in delayed worker, the gem in gemfile is working pretty wel for that purpose
+
+* cant add ordering and sorting within same page as those features are conflicting on frontend side
 
 === NODE
 
