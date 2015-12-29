@@ -16,5 +16,6 @@
         %td= site.source
         %td= link_to 'Edit', edit_site_path(site), remote: true
 
+= paginate @sites
 
 #my-modal.modal.fade{:role => "dialog", :tabindex => "-1"}

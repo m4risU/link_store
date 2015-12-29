@@ -28,6 +28,7 @@ gem 'nokogiri'
 gem 'sidekiq'
 gem 'sinatra', require: nil
 gem 'bootstrap-generators', '~> 3.3.4'
+gem 'kaminari'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

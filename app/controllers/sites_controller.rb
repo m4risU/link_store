@@ -2,7 +2,7 @@ class SitesController < ApplicationController
   before_action :set_site, only: [:edit, :update]
 
   def index
-    @sites = Site.all
+    @sites = Site.page(params[:page]).per(25)
   end
 
   def edit
