@@ -11,7 +11,7 @@ class Scraper::Alexa
           site = Site.find_or_create_by(url: link.content.strip)
           site.update_attributes(source: "http://www.alexa.com#{link['href']}")
           # best to delay it
-          site.fetch_stats
+          site.delay.fetch_stats
         end
       end
     end
