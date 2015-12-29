@@ -18,3 +18,10 @@ Things done and not finished:
 
 * image fetching has same place in delayed worker, the gem in gemfile is working pretty wel for that purpose
 
+=== NODE
+
+* I have come to conlusion that I would like to show more complex statistics and using redis the way I have used is not optimal at all.
+
+* I need better idea on how I want to represent it/or how it is going to be used.
+
+* Storing it in database could solve the issue and should be most probably done this way, so clicks can be stored in a format easy to aggregate.
